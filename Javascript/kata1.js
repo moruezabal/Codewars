@@ -88,7 +88,22 @@ arrayDiff([1,2,2,2,3],[2]) == [1,3]
 */
 
 function arrayDiff(a, b) {
-  /* b.forEach(element => {
-      a.indexOf
-  }); */
+  b.forEach(element => {
+      let idx = a.indexOf(element);
+      while (idx != -1) {
+          a.splice(idx, 1);
+          idx = a.indexOf(element);
+      };
+  });
+  return a;
 }
+
+//console.log(arrayDiff([1,2,5,4,2,1,3,1,2,6,1,5,6,2,3],[6,2,3]))
+
+/* Most optimal solution:
+  function array_diff(a, b) {
+    return a.filter(e => !b.includes(e));
+}
+*/
+
+
