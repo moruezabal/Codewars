@@ -138,3 +138,27 @@ function iqTest(numbers){
   
   return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
 } */
+
+/* RGB To Hex Conversion */
+
+/* The rgb function is incomplete. Complete it so that passing in RGB decimal values will result 
+in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. 
+Any values that fall out of that range must be rounded to the closest valid value.
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here. */
+
+function rgb(r, g, b){
+
+  let args = Object.values(arguments).map(arg => {
+    if(arg < 0){
+      arg = 0
+    } 
+    else if (arg > 255){
+      arg = 255
+    } 
+    return arg 
+  });
+
+  return (args.map(arg => arg.toString(16).padStart(2,0)).join("")).toUpperCase();
+}
+
+console.log(rgb(-20,0,211));
